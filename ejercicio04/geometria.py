@@ -1,6 +1,5 @@
 class OperadorInvalidoError(Exception):
-    def __init__(self, operador):
-        super().__init__(f"Operador inválido: '{operador}'. Use +, -, * o /")
+    pass
 
 
 def calcular_operacion(operacion):
@@ -18,7 +17,7 @@ def calcular_operacion(operacion):
         raise ValueError("Los valores ingresados deben ser números")
 
     if operador not in ["+", "-", "*", "/"]:
-        raise OperadorInvalidoError(operador)
+        raise OperadorInvalidoError("Operador inválido")
 
     if operador == "+":
         return numero1 + numero2
@@ -30,18 +29,3 @@ def calcular_operacion(operacion):
         if numero2 == 0:
             raise ZeroDivisionError("No se puede dividir entre cero")
         return numero1 / numero2
-
-
-try:
-    operacion = input("Ingrese la operación (ejemplo: 10 / 2): ")
-    resultado = calcular_operacion(operacion)
-    print("Resultado:", resultado)
-
-except ZeroDivisionError as e:
-    print("Error:", e)
-
-except OperadorInvalidoError as e:
-    print("Error:", e)
-
-except ValueError as e:
-    print("Error:", e)
