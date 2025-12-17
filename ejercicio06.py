@@ -25,3 +25,5 @@ equipos = [
 json_equipos = json.dumps(equipos, indent=4, ensure_ascii=False)
 
 print(json_equipos)
+
+
