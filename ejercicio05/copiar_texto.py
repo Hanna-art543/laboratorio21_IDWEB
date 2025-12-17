@@ -18,3 +18,5 @@ origen = input("Nombre del archivo de texto origen: ")
 destino = input("Nombre del archivo de texto destino: ")
 
 copiar_archivo_txto(origen, destino)
+
+
